@@ -7,7 +7,7 @@ En este repositorio se encuntra la resolución para el Challenge de Churrasco.
 
 Instrucciones sobre cómo instalar y configurar el proyecto localmente.
 
-Insalar dependencias `npm install` y luego para levantar el pryecto 'ng serve' y navegar a `http://localhost:4200/`
+Insalar dependencias `npm install` y luego para levantar el proyecto 'ng serve' y navegar a `http://localhost:4200/`
 
 El pryecto esta desarrollado en Angualar version 17.1.0. Se recomienda insalar Node v18.14.0 y npm v9.3.1
 
