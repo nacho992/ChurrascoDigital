@@ -1,27 +1,20 @@
-# ChurrascoProyect
+# Churrasco Challenge
+![Churrasco Digital](logoReademe.png)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+En este repositorio se encuntra la resolución para el Challenge de Churrasco.
 
-## Development server
+## Instalación
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Instrucciones sobre cómo instalar y configurar el proyecto localmente.
 
-## Code scaffolding
+Insalar dependencias `npm install` y luego para levantar el pryecto 'ng serve' y navegar a `http://localhost:4200/`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+El pryecto esta desarrollado en Angualar version 17.1.0. Se recomienda insalar Node v18.14.0 y npm v9.3.1
 
-## Build
+## Uso
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para poder hacer uso de la aplicación es obligatorio contar con un usuario y contraseña.
+Ingresar al sistema con:
+` Usuario: challenge`
+` contraseña: ch411enge`.
+Una vez logeado correctamente, el usuario podrá vizualisar la lista de productos, y agregar productos nuevos, como también vizualisar y buscar cada uno.
