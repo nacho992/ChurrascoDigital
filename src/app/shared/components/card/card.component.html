@@ -1,0 +1,17 @@
+@if (!isImageError(product.pictures[0])){
+  <div class="blog-card fadeIn second">
+    <div class="meta">
+      <div class="md:p-2 p-1 w-1/2">
+          <app-imagen [imgURL]="product.pictures[0]"></app-imagen>
+      </div>
+    </div>
+  
+    <div class="description">
+      <h1>{{ product.name }}</h1>
+      <p> {{ product.description }} </p>
+      <p class="read-more">
+        <a > $ {{ product.price }}</a>
+      </p>
+    </div>
+  </div>
+}

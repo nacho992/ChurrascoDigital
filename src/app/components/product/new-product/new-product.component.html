@@ -1,0 +1,87 @@
+<section class="text-gray-600 body-font overflow-hidden">
+    <div class="container mx-auto">
+      <div class="lg:w-4/5 mx-auto flex flex-wrap">
+        <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+            <form class="ml-16" [formGroup]="form">
+
+                <div class="relative mb-4 w-52 mt-8">
+                    <span for="name" class="text-white leading-7 text-sm p-float-label">
+                      <input id="name" type="text" pInputText formControlName="name" class="input-form ng-invalid ng-dirty">
+                      <label class="text-slate-500" for="name">Nombre</label>
+                    </span>
+                    @if (form.get('name')?.invalid && form.get('name')?.touched) {
+                      <span class="input-error">
+                        El Nombre debe tener al menos 9 caracteres
+                      </span>
+                    }
+                  </div>
+
+                  <div class="relative mb-4 w-52 mt-8">
+                    <span for="description" class="text-white leading-7 text-sm p-float-label">
+                      <input id="description" type="text" pInputText formControlName="description" class="input-form ng-invalid ng-dirty">
+                      <label class="text-slate-500" for="description">Descripción</label>
+                    </span>
+                    @if (form.get('description')?.invalid && form.get('description')?.touched) {
+                      <span class="input-error">
+                        La descripción debe tener al menos un caracter
+                      </span>
+                    }
+                  </div>
+
+                  <div class="relative mb-4 w-52 mt-8">
+                    <span for="price" class="text-white leading-7 text-sm p-float-label">
+                      <input id="price" type="number" pInputText formControlName="price" class="input-form ng-invalid ng-dirty">
+                      <label class="text-slate-500" for="price">Precio</label>
+                    </span>
+                    @if ((form.get('price')?.invalid || form.get('price')?.getError('zeroOrMore')) && form.get('price')?.touched) {
+                      <span class="input-error">
+                        El precio debe ser mayo a 0.
+                      </span>
+                    }
+                  </div>
+
+                  <button type="button" class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" (click)="onCreateProduct()">guardar</button>
+
+            </form>
+         
+        </div>
+        
+        <div class="py-2">
+            <p-button type="button" icon="pi pi-plus" (click)="addImage()" [raised]="true" [rounded]="true"></p-button>
+            @if(form.get('pictures')?.value.length){
+              <p-button (onClick)="onDelete()" icon="pi pi-times" [rounded]="true" [text]="true" [raised]="true" severity="danger" size="small"></p-button>
+            }
+        </div>
+        <p-galleria 
+              [value]=" form.get('pictures')?.valid ? form.get('pictures')?.value : noImage" 
+              [containerStyle]="{'width': '420px', 'height':'400px'}"
+              [numVisible]="form.get('pictures')?.valid ? form.get('pictures')?.value.length : 0"
+              [responsiveOptions]="responsiveOptions"
+              [autoPlay]="true" 
+              [circular]="true"
+              [(activeIndex)]="activeIndex">
+          <ng-template pTemplate="item" let-item>
+              <img [src]="item" style="width: 420p; height: 285px; display: block;"/>
+          </ng-template>
+          <ng-template pTemplate="thumbnail" let-item>
+              <div class="grid grid-nogutter justify-content-center">
+                  <img [src]="item" style="display: block; height: 80px;" />                  
+              </div>
+          </ng-template>
+        </p-galleria>
+  
+      </div>
+    </div>
+  </section>
+
+  
+<p-dialog header="Ingrese URL de imagen" 
+    [(visible)]="showInputUrl" 
+    [draggable]="false" 
+    [resizable]="false"
+    [style]="{width: '50vw', display: 'flex'}">
+    <div class="flex justify-between">
+        <input #img id="img" type="text" pInputText placeholder="https://imagen.com" class="input-form ng-invalid ng-dirty">
+         <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" (click)="saveImage(img.value)">guardar</button>
+    </div>
+</p-dialog>

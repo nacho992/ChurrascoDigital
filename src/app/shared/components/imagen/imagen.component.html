@@ -1,0 +1,7 @@
+<div class="blog-card" [appImageError]="errorImageUrls" [imgUrl]="imgURL">
+  <img alt="https://dummyimage.com/601x361" 
+      class="photo" 
+      src="{{ imgURL }}"
+      (error)="handleImageError($event,imgURL)"
+      (load)="handleImageLoad($event)" >
+</div>

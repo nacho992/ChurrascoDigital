@@ -1,0 +1,55 @@
+<section class="text-whtie body-font">
+
+  <div class="container-toolbar fadeIn first">
+    <p-toolbar>
+      <!-- <div class="p-toolbar-group-right">
+        <button pButton class="p-button-sm" icon="pi pi-search"></button>
+      </div> -->
+      <div class="search-box p-toolbar-group-right">
+        <input type="text" placeholder="Buscar productos..." class="search-input" #inputSearch (keyup)="search(inputSearch.value)"/>
+        <a class="search-btn">
+          <i class="pi pi-search"></i>
+        </a>
+      </div>
+
+      <div class="p-toolbar-group-left">
+        <p-button (click)="newProduct()" class="p-button-warning" label="Nuevo" icon="pi pi-plus"></p-button>
+      </div>
+      
+    </p-toolbar>
+  </div>
+
+  <div class="container mx-auto flex flex-wrap">
+    <div class="container-seccion" 
+         infiniteScroll 
+         (scrolled)="onScrollDown()">
+
+      @if (productList().length){
+      
+      <div class="flex-wrap -m-4">
+
+        @for (item of productList(); track item._id) {
+          @if(item.pictures.length){
+            <app-card [product]="item" (click)="viewProduct(item)"/>
+          }
+        } @empty {
+          <li> There are no items. </li>
+        } 
+
+      </div>
+    }
+      
+    </div>
+  </div>
+
+  @if(showButton){
+    <button 
+      (click)="onScrollTop()" 
+      class="btn-scrollTop">
+      <i class="pi pi-arrow-up"></i>
+    </button>
+  }
+
+</section>
+
+<p-toast></p-toast>

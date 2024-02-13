@@ -1,1 +1,168 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Order */
+@layer reset, primeng;
+
+/* Reset CSS */
+@layer reset {
+    button,
+    input {
+        &:focus{
+          box-shadow: none;
+        }
+    }
+}
+
+:root {
+  --primary-color: #1b00ff;
+  --background-400: #5048A8;
+  --background-600: #2E2960;
+}
+
+html, body {
+  margin: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%23514FFF' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%235748ef' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%235a42df' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%235c3bd0' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%235c35c1' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%235b2fb3' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23592aa4' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23562597' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23532089' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%234f1b7c' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%234a1770' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23451363' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23400f58' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%233a0c4c' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%23340941' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%232d0737' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%2327052d' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23210024' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Inputs Form */
+.input-form{
+  @apply flex rounded border text-black border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out;
+}
+
+.input-error{
+  @apply text-sm text-red-500;
+  font-size: 12px;
+}
+
+.swal2-container {
+  z-index: 99999;
+}
+
+/* Animations */
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+/* Fade-in Animation */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  -webkit-animation: fadeIn ease-in 1;
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+.fadeIn.first {
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.fadeIn.second {
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+  -webkit-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #56baed;
+  content: "";
+  transition: width 0.2s;
+}
+
+.underlineHover:hover {
+  color: #0d0d0d;
+}
+
+.underlineHover:hover:after {
+  width: 100%;
+}

@@ -1,0 +1,6 @@
+
+@if(authService.isLoggin$() | async; as logged)
+{
+    <app-toolbar/>
+}
+<router-outlet></router-outlet>

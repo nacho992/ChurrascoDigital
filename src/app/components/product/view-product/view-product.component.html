@@ -1,0 +1,33 @@
+<section class="text-gray-600 body-font overflow-hidden">
+  <div class="container mx-auto">
+    <div class="lg:w-4/5 mx-auto flex flex-wrap">
+      <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+        <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">{{ product.name }}</h1>
+        <div class="flex mb-4">
+          <a class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1">Descripción</a>
+        </div>
+        <p class="leading-relaxed mb-4">{{ product.description }}</p>
+        <div class="flex py-8">
+          <span class="title-font font-medium text-2xl text-gray-900"> ${{product.price}} </span>
+        </div>
+      </div>
+      
+      <p-galleria [value]="product.pictures" 
+            [containerStyle]="{'width': '420px', 'height':'400px'}"
+            [responsiveOptions]="responsiveOptions"
+            [numVisible]="product.pictures.length"
+            [autoPlay]="true" 
+            [circular]="true">
+        <ng-template pTemplate="item" let-item>
+            <img [src]="item" style="width: 420p; height: 285px; display: block;"/>
+        </ng-template>
+        <ng-template pTemplate="thumbnail" let-item>
+            <div class="grid grid-nogutter justify-content-center">
+                <img [src]="item" style="display: block; height: 80px;" />
+            </div>
+        </ng-template>
+      </p-galleria>
+
+    </div>
+  </div>
+</section>

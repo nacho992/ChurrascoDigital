@@ -1,0 +1,24 @@
+<div class="card fadeInDown">
+  <p-toolbar
+    styleClass="shadow-2 bg-indigo-500"
+    [style]="{
+      'height':'90px',
+      'background-image':
+        'linear-gradient(to right, #5048A8, #2E2960)'
+    }"
+  >
+    <img class="logo-img" src="../../../assets/logo/LOGO1.png" />
+
+
+    <div class="flex align-items-center gap-2">
+      <button
+        pTooltip="Cerrar sesión" 
+        tooltipPosition="left" 
+        (click)="signOut()"
+        class="p-link inline-flex justify-content-center align-items-center text-white h-3rem w-3rem border-circle hover:bg-white-alpha-10 transition-all transition-duration-200">
+        <i class="pi pi-sign-out text-2xl"></i>
+      </button>
+    </div>
+
+  </p-toolbar>
+</div>
