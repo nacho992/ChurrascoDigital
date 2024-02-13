@@ -17,4 +17,4 @@ Para poder hacer uso de la aplicación es obligatorio contar con un usuario y co
 Ingresar al sistema con:
 ` Usuario: challenge`
 ` contraseña: ch411enge`.
-Una vez logeado correctamente, el usuario podrá vizualisar la lista de productos, y agregar productos nuevos, como también vizualisar y buscar cada uno.
+Una vez logeado correctamente, el usuario podrá visualizar la lista de productos, y agregar productos nuevos, como también visualizar y buscar cada uno.
