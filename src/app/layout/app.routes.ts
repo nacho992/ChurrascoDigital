@@ -14,10 +14,6 @@ export const routes: Routes = [
                           .then(c => c.ProductListComponent)
   },
 
-  { path: 'product-new', 
-    component: NewProductComponent 
-  },
-
   { path: 'login', 
     loadComponent: () => import('../components/Login/login.component')
                           .then(c => c.LoginComponent)
